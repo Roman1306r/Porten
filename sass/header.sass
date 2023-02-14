@@ -1,0 +1,228 @@
+@mixin telandgraficbefore
+    content: ''
+    position: absolute
+    right: -12px
+    background-color: grey
+    top: 50%
+    transform: translate(0, -50%)
+    width: 1px
+    height: 60%
+
+@mixin burger
+    content: ''
+    background-color: white
+    position: absolute
+    width: 100%
+    height: 2px
+    left: 0
+    transition: 0.4s 
+
+@mixin headerlist
+    content: ''
+    position: absolute
+    width: 20%
+    transform: translate(-50%, 0)
+    background-color: #969696
+    height: 1px
+    left: 50%
+
+
+
+._container 
+    max-width: 1130px
+    margin: 0 auto
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+
+.header
+    &__container
+        padding: 0px 10px
+    &__menu
+        @media (max-width: 767px)
+            position: fixed
+            top: -100%
+            left: 0
+            display: flex
+            align-items: center
+            justify-content: center
+            flex-direction: column
+            width: 100%
+            height: 100%
+            transition: 0.4s
+            background-color: rgb(0, 0, 0, 0.9)
+            padding: 120px 10px 20px 10px  
+            overflow: auto
+            z-index: 1
+        &.active
+            @media (max-width: 767px)
+                top: 0 
+    &__top
+        padding: 10px 10px
+        @media (max-width: 767px)
+            padding: 0 
+        &__info
+            display: flex
+            align-items: center
+            @media (max-width: 767px)
+                display: block
+                margin-top: 20px 
+        &__exit
+            display: flex
+            align-items: center  
+        &__exit a
+            color: #969696
+            font-size: 12px
+            line-height: 16px
+            display: flex
+            align-items: center
+            @media (max-width: 767px)
+                color: #969696
+                font-size: 17px
+                display: block
+                text-align: center
+            &:hover
+                color: #c1c1c1
+            & img
+                 margin-right: 12px
+    &__bottom
+        background-color: #0F0F0F
+        padding: 0px 10px
+        @media (max-width: 767px)
+            padding:5px 20px 0px 20px 
+        &_menu
+            display: flex
+            align-items: center
+    &__logo a
+        font-family: 'Post No Bills Jaffna'
+        font-weight: 700
+        font-size: 36px
+        line-height: 54px
+        color: #FFFFFF
+        text-transform: uppercase
+        position: relative
+        z-index: 2
+    &__list
+        display: flex
+        align-items: center
+        @media (max-width: 767px)
+            display: block
+            text-align: center
+            position: relative
+        &::before
+            @media (max-width: 767px)
+                top: -15px
+                @include headerlist
+        &::after
+            @media (max-width: 767px)
+                @include headerlist
+        & li
+            @media (max-width: 767px)
+                margin-top: 30px
+
+    &__link
+        padding: 0 20px
+        font-size: 14px
+        line-height: 54px
+        text-transform: uppercase
+        color: #FFFFFF
+        height: 100%
+        display: inline-block
+        transition: all 0.3s ease 0s
+        @media (max-width: 767px)
+            padding: 0 40px
+            font-size: 18px
+            display: inline-block
+        &:hover
+             background-color: #1F1F1F
+        &.active
+            background-color: #1F1F1F
+            &:hover
+                background-color: #161616
+    &__icons
+        margin-left: 60px
+        display: flex
+        align-items: center 
+        @media (max-width: 767px)
+            margin-left: 0px          
+        & img
+            &:hover
+                opacity: 0.5
+    &__search
+        margin-left: 44px
+        @media (max-width: 767px)
+            margin-left: 14px
+            margin-right: 20px
+    &__burger
+        display: none
+        @media (max-width: 767px)
+            cursor: pointer
+            display: block
+            position: relative
+            width: 30px
+            height: 20px
+            z-index: 3
+        & span
+            @media (max-width: 767px)
+                position: absolute
+                background-color: white
+                left: 0
+                width: 100%
+                height: 2px
+                top: 9px
+                transition: 0.4s
+        &::after
+            @media (max-width: 767px)
+                @include burger
+                bottom: 0
+        &::before
+            @media (max-width: 767px)
+                @include burger
+                top: 0
+        &.active
+            & span
+                @media (max-width: 767px)
+                    transform: scale(0)
+            &::before
+                @media (max-width: 767px)
+                    transform: rotate(45deg)
+                    top: 9px
+            &::after
+                @media (max-width: 767px)
+                    transform: rotate(-45deg)
+                    bottom: 9px
+        
+
+   
+.info 
+    font-weight: 400
+    font-size: 12px
+    line-height: 16px
+    color: #969696
+    position: relative
+    display: flex
+    justify-content: center
+    align-items: center
+    @media (max-width: 767px)
+        font-size: 14px
+        margin-bottom: 10px
+    &__tel
+        margin-right: 25px
+        @media (max-width: 767px)
+            margin-right: 0px
+        &__icon
+            margin-right: 16px
+        & a
+            color: inherit
+            &:hover
+                color: #c1c1c1
+    &__grafic
+        margin-right: 25px
+        @media (max-width: 767px)
+            margin-right: 0px
+        &::before
+            @include telandgraficbefore
+            @media (max-width: 767px)
+                content: none
+

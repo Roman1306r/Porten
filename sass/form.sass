@@ -1,0 +1,107 @@
+.info__footer 
+    background: url('../images/page/form-img.webp') center / cover no-repeat
+    .info__container 
+        height: 100%
+        width: 100%
+        background-color: rgba(0, 0, 0, 0.5)
+        .info__body 
+            align-items: flex-start
+            gap: 30px
+            padding: 80px 10px 100px 10px
+            @media (max-width:992px)
+                padding: 50px 10px 60px 10px
+            @media (max-width:767px)
+                padding: 40px 10px 50px 10px
+            @media (max-width:1200px)
+                gap: 50px
+                flex-wrap: wrap
+                justify-content: center
+            @media (max-width:992px)
+                gap: 30px          
+            @media (max-width:767px)
+                text-align: center
+                gap: 10px
+            .info__magazine 
+                flex: 0 0 50%
+                @media (max-width:992px)
+                    flex: 0 0 45%
+                @media (max-width:767px)
+                    flex: 0 0 100%
+                &__title 
+                    margin-bottom: 35px
+                    font-size: 24px
+                    line-height: 28px
+                    text-transform: uppercase
+                    @media (max-width:767px)
+                        margin-bottom: 25px
+                        font-size: 20px
+                        white-space: nowrap
+                &__text
+                    font-weight: 400
+                    font-size: 14px
+                    line-height: 150% 
+                    transform: translate(-100%, 0)
+                    transition: all 0.5s ease 0s
+                    opacity: 0
+                    &.anim
+                        transform: translate(0%, 0)
+                        opacity: 1
+                    @media (max-width:767px)
+                        font-size: 13px
+            .info__email 
+                flex: 0 0 33.333%
+                @media (max-width:767px)
+                    margin-top: 30px
+                &__text 
+                    font-weight: 400
+                    font-size: 14px
+                    line-height: 150%
+                    margin-bottom: 35px 
+                    @media (max-width:767px)
+                        margin-bottom: 15px  
+                &_form 
+                    display: flex
+                    align-items: center 
+                    @media (max-width:1200px)
+                        justify-content: center
+                    .form__email input
+                        width: 210px
+                        height: 42px
+                        display: inline-block 
+                        background: rgba(255, 255, 255, 0.2)
+                        padding: 0 10px
+                        font-size: 15px
+                        color: #e6e6e6
+                        @media (max-width:767px)
+                            width: 200px 
+                            height: 42px
+                            display: inline-block
+                            background: rgba(255, 255, 255, 0.2)
+                            padding: 0 10px
+                            color: #e6e6e6
+                        &::placeholder
+                            color: #e6e6e6
+                    .form__email_btn button
+                        display: inline-block
+                        width: 140px
+                        height: 42px
+                        background-color: #0F0F0F
+                        color: white
+                        font-size: 12px
+                        line-height: 150%
+                        letter-spacing: 0.05em
+                        cursor: pointer
+                        transition: all 0.3s
+                        @media (max-width:767px)
+                            display: inline-block
+                            width: 110px
+                            height: 42px
+                            background-color: #0F0F0F
+                            color: white
+                            font-size: 11px
+                            line-height: 150%
+                            letter-spacing: 0.05em
+                            cursor: pointer
+                        &:hover
+                            background-color: white
+                            color: black

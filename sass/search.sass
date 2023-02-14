@@ -1,0 +1,72 @@
+.search
+    position: fixed
+    left: 0
+    top: 0
+    width: 100vw
+    height: 100vh
+    transform: rotate(-90deg)
+    background-color: rgba(0, 0, 0, 0.9)
+    transition: all 0.5s
+    transform-origin: top left
+    z-index: 3
+    overflow-x: auto
+    &.active
+        transform: rotate(0deg)
+    &__body
+        position: relative
+        padding: 100px
+        padding-bottom: 20px
+        display: flex
+        align-items: center
+        justify-content: space-between
+        gap: 40px
+        @media (max-width: 767px)
+            padding: 50px 20px
+            padding-bottom: 10px
+            gap: 10px
+        & button
+            cursor: pointer
+            background-color: transparent
+            transition: all 0.3s ease 0s
+            &:hover
+                transform: scale(1.1)
+        &-input
+            width: 90%
+            height: 60px
+            background-color: transparent
+            border-radius: 20px
+            border: 1px solid white
+            color: white
+            font-size: 30px
+            padding: 0px 30px
+            @media (max-width: 767px)
+                height: 50px
+                font-size: 25px
+                width: 98%
+            &::placeholder
+                @media (max-width: 767px)
+                    font-size: 15px
+                    
+    &__result
+        padding: 20px 100px
+        font-size: 30px
+        margin: 0px 140px
+        color: grey
+        @media (max-width: 992px)
+            margin: 0px 20px
+        @media (max-width: 767px)
+            padding: 20px 10px  
+            font-size: 20px
+        & li 
+            list-style: square
+            margin: 10px 0
+            cursor: pointer
+            color: white
+            @media (max-width: 767px)
+                margin: 20px 0
+            &:hover
+                text-decoration: underline
+    & h2
+        padding: 20px 
+        font-size: 20px
+        text-align: center
